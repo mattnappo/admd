@@ -2,4 +2,4 @@
 src/*.swp
 *.srp
 src/*.o
-bin/
+bin/*
