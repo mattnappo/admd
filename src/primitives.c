@@ -25,7 +25,8 @@ material *new_material()
 	return m;
 }
 
-int print_material(material *m) {
+int print_material(material *m)
+{
 	for (int i = 0; i < Y_MAT_SIZE; i++) {
 		for (int j = 0; j < X_MAT_SIZE; j++) {
 			print_atom(m->A[i][j]);

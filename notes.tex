@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath}
+\nofiles
+
+\title{Molecular Dynamics Project}
+\author{Matt Nappo}
+\date{\today}
+
+\begin{document}
+
+\section{Math Review}
+
+A vector-valued function is a function that takes in n input variables and puts those input variables into component scalar functions. Example: $$f(t, v) = f_1(t, v)\hat x + f_2(t, v)\hat y + f_3(t, v)\hat z$$ There can be as many t, v as you want. This is basically just a vector field (they're basically the same thing for me at least), a (3D) plane where every point is a vector (assuming no domain restrictions). When you plug in real actual numbers into the vector function (co-domain), the values are put into the scalar functions and each scalar function computation is separate. You end up with a vector.
+
+A scalar-valued function is something just like $$f(x_1, x_2, x_3) = x_1^2 + x_2^2 + x_3^2$$ where the output of the function is just a scalar.
+
+You take the gradient of a scalar-valued function. It doesn't really make sense to take the gradient of a vector-valued function. The gradient is just all of the partial derivatives of the scalar function put into a vector. The gradient of a scalar-valued function will give you a vector-valued function. So, the gradient at a single point is just like evaluating a regular vector-valued function which I described above: you just plug the values into each component scalar function and you end up with a vector. However, in this case, because the components of the vector function are the partial derivatives of some other function, the vector that you end up with when you evaluate the gradient at a certain point is the slope of the tangent line in the x direction, y direction, and z direction. Pretty cool, huh!
+
+\end{document}
+
