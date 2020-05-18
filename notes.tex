@@ -16,5 +16,30 @@ A scalar-valued function is something just like $$f(x_1, x_2, x_3) = x_1^2 + x_2
 
 You take the gradient of a scalar-valued function. It doesn't really make sense to take the gradient of a vector-valued function. The gradient is just all of the partial derivatives of the scalar function put into a vector. The gradient of a scalar-valued function will give you a vector-valued function. So, the gradient at a single point is just like evaluating a regular vector-valued function which I described above: you just plug the values into each component scalar function and you end up with a vector. However, in this case, because the components of the vector function are the partial derivatives of some other function, the vector that you end up with when you evaluate the gradient at a certain point is the slope of the tangent line in the x direction, y direction, and z direction. Pretty cool, huh!
 
+\section {Computational Differentiation}
+
+\subsection {Numerical Differentiation}
+Bad, slow. Numerical differentiation is when you just $\frac{f(x+h)-f(x)}{h}$ and choose a really small $h$. Limited by the precision of $h$.
+
+\subsection {Algorithmic/Automatic Differentiation}
+Forward, backward, and midpoint method.
+Basically the idea that you multiply some matrix $D$ by a vector which represents the function you are differentiating. Each row of the vector is the
+value of the function at that point. A greater $N$ means more precision because now you're splitting up the range more and getting more and more accurate
+values of the function at each point. 
+$$
+\dfrac{df}{dx} = 
+\begin{bmatrix}
+	d_{00} & \cdots & d_{0N} \\
+	\vdots & \ddots & \vdots \\
+	d_{N0} & \cdots & d_{NN}
+\end{bmatrix}
+\begin{bmatrix}
+	f(x_0) \\
+	\vdots \\
+	f(x_N)
+\end{bmatrix}
+\text{ as } N \rightarrow \infty
+$$
+
 \end{document}
 
