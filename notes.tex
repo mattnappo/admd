@@ -1,5 +1,8 @@
 \documentclass{article}
+
 \usepackage{amsmath}
+\usepackage{amsfonts}
+
 \nofiles
 
 \title{Molecular Dynamics Project}
@@ -19,7 +22,7 @@ You take the gradient of a scalar-valued function. It doesn't really make sense 
 \section {Computational Differentiation}
 
 \subsection {Numerical Differentiation}
-Bad, slow. Numerical differentiation is when you just $\frac{f(x+h)-f(x)}{h}$ and choose a really small $h$. Limited by the precision of $h$.
+Bad, slow. Numerical differentiation is when you just $$\frac{f(x+h)-f(x)}{h}$$ and choose a really small $h$. Limited by the precision of $h$.
 
 \subsection {Algorithmic/Automatic Differentiation}
 Forward, backward, and midpoint method.
@@ -40,6 +43,37 @@ $$
 \end{bmatrix}
 \text{ as } N \rightarrow \infty
 $$
+
+\subsection {An Extension to Multiple Dimensions}
+So, now we have this new structure $\mathbf{D}$ that lets us differentiate a function. Just to be super clear, $$f' = \mathbf{D}f = \dfrac{df}{dx}$$
+Surely, we can define $f: \mathbb{R}^n \rightarrow \mathbb{R}$. Let's use an example in $\mathbb{R}^2$ and define $f(t, v)$.
+$$\mathbf{D}_tf = \dfrac{\partial f(t, v)}{\partial t} = f_t \text{ and } \mathbf{D}_vf = \dfrac{\partial f(t, v)}{\partial v} = f_v$$
+Therefore,
+$$
+\nabla f = \begin{bmatrix}
+	\mathbf{D}_tf \\
+	\mathbf{D}_vf
+\end{bmatrix}
+$$
+
+But what does this really mean? Let's be more explicit with an example where $N = 4$.
+
+$$
+\mathbf{D_t}f = \begin{bmatrix}
+	-1 &  1 &  0 & 0 \\
+	 0 & -1 &  1 & 0 \\
+	 0 &  0 & -1 & 1 \\
+	 0 &  0 & -1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+	f(t, v)_0 \\
+	f(t, v)_1 \\
+	f(t, v)_2 \\
+	f(t, v)_3
+\end{bmatrix}
+$$
+
+Now I'm confused. Because numerically, you need to supply some actual $t$ and $v$. Should $t$ and $v$ be over the same range?
 
 \end{document}
 
