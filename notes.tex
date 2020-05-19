@@ -59,21 +59,38 @@ $$
 But what does this really mean? Let's be more explicit with an example where $N = 4$.
 
 $$
-\mathbf{D_t}f = \begin{bmatrix}
+\mathbf{D}f = \nabla f = \begin{bmatrix}
 	-1 &  1 &  0 & 0 \\
 	 0 & -1 &  1 & 0 \\
 	 0 &  0 & -1 & 1 \\
 	 0 &  0 & -1 & 1
 \end{bmatrix}
 \begin{bmatrix}
-	f(t, v)_0 \\
-	f(t, v)_1 \\
-	f(t, v)_2 \\
-	f(t, v)_3
+	f(t_0, v_0) \\
+	f(t_1, v_1) \\
+	f(t_2, v_2) \\
+	f(t_3, v_3)
+\end{bmatrix}
+$$
+Or is it
+$$
+\nabla f(t, v) = \begin{bmatrix}
+	-1 &  1 &  0 & 0 \\
+	 0 & -1 &  1 & 0 \\
+	 0 &  0 & -1 & 1 \\
+	 0 &  0 & -1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+	f_t(t, v)\hat \imath + f_v(t, v)\hat \jmath \\
+	f_t(t, v)\hat \imath + f_v(t, v)\hat \jmath \\
+	f_t(t, v)\hat \imath + f_v(t, v)\hat \jmath \\
+	f_t(t, v)\hat \imath + f_v(t, v)\hat \jmath
 \end{bmatrix}
 $$
 
-Now I'm confused. Because numerically, you need to supply some actual $t$ and $v$. Should $t$ and $v$ be over the same range?
+Vector within a vector??
+Now I'm confused. That makes no sense. 
+Also: same range for $t$ and $v$?
 
 \end{document}
 
