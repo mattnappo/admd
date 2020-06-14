@@ -1,2 +1,2 @@
 # md
-A repository for my molecular dymanics research project.
+A repository for my molecular dymanics research.
