@@ -12,8 +12,9 @@
 
 \begin{document}
 
+\maketitle
+
 \section{Basic Definitions}
-\indent
 $$\vec{v} = \left< v_x, v_y \right> \,\text{(velocity)}$$
 
 $$\vec{v} \cdot \vec{v} = v^2 = v_xv_x + v_yv_y \,\text{(velocity squared)}$$
@@ -26,10 +27,17 @@ $$K = \frac{1}{2}mv^2 = \frac{p^2}{2m} \,\text{(kinetic energy of a particle)}$$
 %$$K_{tot} = \sum_i^N \frac{1}{2}mv_i^2 \,\text{(total kinetic energy of the system)}$$
 
 \section{Derivations}
-Because this is a 2D ideal gas moving in a natural environment, we can assume that $v_x = v_y$ because the gas has no external force applied to it; it is merely moving naturally.
+Because this is a 2D ideal gas moving in a natural environment, we can assume that $|v_x| = |v_y|$ because the gas has no external force applied to it; it is merely moving naturally.
 Because the gas is ideal, $$\Delta p = p_{i,x} - p_{f,x} = p_x - (-p_x) = 2p_x$$ when a particle of the gas hits a wall. This is because the speed remains the same and because the direction of the perpendicular component changes upon a collision with a wall.
 Therefore, the time $\Delta t$ between each particle's collisions with a wall is $\frac{2L}{|v_x|}$ assuming that the area of the 2D space is $L^2$.
-This change in momentum upon a collision is a force. The force of a singular particle colliding with a wall is therefore given by $$F = \frac{\Delta p}{\Delta t} = \frac{2mv_xv_x}{2L} = \frac{mv_x^2}{L}$$ Therefore, by summing all of momentum changes, the total force on the walls of the container can be calculated is $$F = \frac{Nmv_x^2}{4L}$$ This force gives the total \emph{pressure} of the container.
+This change in momentum upon a collision is a force. The force of a singular particle colliding with a wall is therefore given by
+$$F = \frac{\Delta p}{\Delta t} = \frac{2mv_xv_x}{2L} = \frac{mv_x^2}{L}$$
+
+The force exerted by all of the particles colliding with a single wall is
+$$F = \frac{1}{L} \sum_i^N \frac{1}{2}mv_{i,x}^2 = \frac{m}{2L} \sum_i^N v_{i,x}^2$$
+because
+This can also be written as
+$$F = \frac{Nm\overline{v_x^2}}{L}\, \text{because}\, \overline{v_x^2} = \frac{1}{N}\sum_i^N v_{i,x}^2$$
 
 \end{document}
 
